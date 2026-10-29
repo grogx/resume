@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валерия Седова | Начинающий IT-специалист</title>
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Шапка --- */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #94a3b8;
+            margin: 0 0 25px 0;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary { background-color: var(--accent); color: #fff; }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-outline { border: 1px solid #475569; color: #e2e8f0; }
+        .btn-outline:hover { background-color: #334155; border-color: #334155; }
+
+        /* --- Основной контент --- */
+        main {
+            max-width: 900px;
+            margin: -40px auto 40px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            background: var(--card-bg);
+            margin-bottom: 25px;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        ul { padding-left: 20px; margin-top: 10px; margin-bottom: 0; }
+        li { margin-bottom: 10px; }
+        li::marker { color: var(--accent); }
+
+        /* --- Навыки --- */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills-list li {
+            background-color: #eff6ff;
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 0;
+            border: 1px solid #bfdbfe;
+            transition: all 0.2s;
+        }
+
+        .skills-list li:hover {
+            background-color: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* --- Опыт --- */
+        .job, .project {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .job:last-child, .project:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .job h3, .project h3 {
+            margin: 0;
+            font-size: 1.15em;
+            color: var(--primary);
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            font-weight: 500;
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .project p { margin: 5px 0 10px 0; color: #475569; }
+
+        .tech-stack {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-left: 3px solid var(--accent);
+            border-radius: 0 4px 4px 0;
+            font-weight: 600;
+        }
+
+        /* --- Подвал --- */
+        footer {
+            background-color: var(--primary);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer p { margin: 10px 0; font-size: 1.05em; }
+        footer a { color: #60a5fa; text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        footer a:hover { color: #93c5fd; text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2em; }
+            main { margin-top: -20px; padding: 0 15px; }
+            section { padding: 20px; }
+            .job-header { flex-direction: column; }
+            .date { margin-top: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Седова Валерия</h1>
+        <p>Начинающий IT-специалист</p>
+        <div class="header-links">
+            <a href="https://github.com/grogx" target="_blank" class="btn btn-primary">Мой GitHub</a>
+            <a href="#contacts" class="btn btn-outline">Связаться со мной</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>Имею диплом СПО с отличием по специальности «Информационные системы и программирование». Сейчас продолжаю обучение в РАНХиГС по направлению «Прикладная информатика».</p>
+            <p>За время учебы и практик успела попробовать себя в разных направлениях: разрабатывала десктопные приложения на Python, делала интеграции с 1С, настраивала компьютерные классы и сети, а также преподавала основы программирования детям. Умею работать с технической документацией и проектировать архитектуру (UML, ER-диаграммы).</p>
+            <p>Сейчас ищу вакансии начального уровня в разработке, тестировании, аналитике или поддержке ИБ. В перспективе хочу углубиться в информационную безопасность.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Навыки</h2>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>SQL / SQLite</li>
+                <li>1С:Предприятие</li>
+                <li>Git</li>
+                <li>Linux (VirtualBox)</li>
+                <li>Понимание SDLC</li>
+                <li>Техническая документация</li>
+                <li>UML / ER-диаграммы</li>
+                <li>C# / Visual Studio</li>
+                <li>MS Office (продвинутый)</li>
+                <li>Основы сетей (TCP/IP)</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Опыт работы и практики</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <h3>Нижегородский пассажирский автотранспортный парк №1</h3>
+                    <span class="date">Дек 2025 — Май 2026</span>
+                </div>
+                <div class="tech-stack">Практикант (Разработчик)</div>
+                <ul>
+                    <li>Разрабатывала АСУ планирования графиков водителей на Python (Tkinter, SQLite).</li>
+                    <li>Делала интеграцию с 1С через JSON и выгрузку данных в Excel.</li>
+                    <li>Тестировала модули и дорабатывала интерфейс по замечаниям.</li>
+                    <li>Писала техническую документацию (руководство пользователя и по установке).</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>МАОУ Школа № 125</h3>
+                    <span class="date">Май 2024 — Июнь 2024</span>
+                </div>
+                <div class="tech-stack">Практикант (Системный администратор)</div>
+                <ul>
+                    <li>Настраивала компьютеры, подключала принтеры и МФУ, устраняла сбои ПО.</li>
+                    <li>Проводила инвентаризацию техники.</li>
+                    <li>Настраивала рабочую среду для лабораторных работ (Python, IDE, сеть).</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Федеральная сеть образовательных центров "Юниум"</h3>
+                    <span class="date">Сент 2023 — Дек 2023</span>
+                </div>
+                <div class="tech-stack">Преподаватель программирования</div>
+                <ul>
+                    <li>Проводила занятия по Python и разработке игр для детей 10–14 лет.</li>
+                    <li>Разрабатывала учебные программы и задания.</li>
+                    <li>Вела журнал и готовила отчеты для родителей.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Проекты</h2>
+            
+            <div class="project">
+                <h3>АСУ планирования графиков водителей</h3>
+                <p>Приложение для автоматизации работы автотранспортного парка. Работа с базой данных, интеграция с 1С и генерация отчетов.</p>
+                <div class="tech-stack">Стек: Python, Tkinter, SQLite, JSON, 1С</div>
+            </div>
+
+            <div class="project">
+                <h3>Образовательные игры на Python</h3>
+                <p>Разработка игровых заданий для обучения детей основам алгоритмизации.</p>
+                <div class="tech-stack">Стек: Python, Lua, Roblox Studio</div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <p>📞 <a href="tel:+79302443239">+7 (930) 244-32-39</a></p>
+        <p>✉️ <a href="mailto:lerasedova44@gmail.com">lerasedova44@gmail.com</a></p>
+        <p>📍 г. Нижний Новгород (готова к удаленной работе)</p>
+    </footer>
+</body>
+</html>
