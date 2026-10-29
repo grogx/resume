@@ -136,7 +136,7 @@
             border-color: var(--accent);
         }
 
-        /* --- Опыт --- */
+        /* --- Опыт и Проекты --- */
         .job, .project {
             margin-bottom: 30px;
             padding-bottom: 25px;
@@ -182,6 +182,20 @@
             border-left: 3px solid var(--accent);
             border-radius: 0 4px 4px 0;
             font-weight: 600;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .project-link:hover {
+            border-bottom-color: var(--accent);
         }
 
         /* --- Подвал --- */
@@ -289,9 +303,10 @@
             <h2>Проекты</h2>
             
             <div class="project">
-                <h3>АСУ планирования графиков водителей</h3>
-                <p>Приложение для автоматизации работы автотранспортного парка. Работа с базой данных, интеграция с 1С и генерация отчетов.</p>
+                <h3>АСУ планирования графиков водителей (Демо-версия)</h3>
+                <p>Учебный прототип системы автоматизации автотранспортного парка. Работа с базой данных, интеграция с 1С через JSON и генерация отчетов в Excel. В проекте используются только тестовые данные.</p>
                 <div class="tech-stack">Стек: Python, Tkinter, SQLite, JSON, 1С</div>
+                <a href="https://github.com/grogx/driver_system" target="_blank" class="project-link">🔗 Посмотреть код проекта на GitHub</a>
             </div>
 
             <div class="project">
